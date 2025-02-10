@@ -5,10 +5,14 @@ def find_max_occurred_alphabet(string):
         array[ord(char) - ord("a")] += 1
 
     max_occurred = array[0]
-    for num in array:
-        if num > max_occurred:
-            max_occurred = num
-    return max_occurred
+    max_occurred_alphabet = "a"
+
+    for  i in range(0, 26):
+        if array[i] > max_occurred:
+            max_occurred = array[i]
+            max_occurred_alphabet = chr(i + ord("a"))
+
+    return max_occurred, max_occurred_alphabet
 
 
 result = find_max_occurred_alphabet
