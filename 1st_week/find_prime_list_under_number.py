@@ -5,7 +5,7 @@ def find_prime_list_under_number(number):
     return_arr = []
     for i in range(2, number):
         is_prime = True
-        for j in range(1, i):
+        for j in return_arr:
             if j != 1 and j != i:
                 if i%j == 0:
                     is_prime = False
