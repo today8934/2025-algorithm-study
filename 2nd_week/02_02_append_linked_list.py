@@ -49,6 +49,18 @@ class LinkedList:
             node = node.next
             number = number + 1
 
+    def delete_node(self, index):
+        if (index < 0): return "Out of Index"
+        if (index == 0): self.head = self.head.next
+        node = self.head
+        number = 0
+        while(True):
+            if (node == None): return "Out of Index"
+            if (number == index - 1):
+                node.next = node.next.next
+            node = node.next
+            number = number + 1
+
 linked_list = LinkedList(5)
 
 linked_list.append(3)
@@ -57,7 +69,10 @@ linked_list.append(12)
 
 linked_list.print_all()
 print(linked_list.get_node(4))
-linked_list.add_node(7, 5)
+linked_list.add_node(7, 0)
+linked_list.print_all()
+
+linked_list.delete_node(2)
 linked_list.print_all()
 
 
